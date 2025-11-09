@@ -12,17 +12,15 @@ A Firefox addon that allows you to send YouTube video links via webhook to a cus
 
 ## Installation
 
-### For Development/Testing
+See [INSTALL.md](INSTALL.md) for detailed installation instructions.
 
-1. Clone this repository
-2. Open Firefox and navigate to `about:debugging#/runtime/this-firefox`
-3. Click "Load Temporary Add-on"
-4. Navigate to the addon directory and select the `manifest.json` file
+### Quick Start
 
-### For Production
+1. Open Firefox and navigate to `about:debugging#/runtime/this-firefox`
+2. Click "Load Temporary Add-on"
+3. Navigate to the addon directory and select the `manifest.json` file
 
-1. Package the addon as a ZIP file containing all files
-2. Submit to Mozilla Add-ons or use it as a private addon
+For production use, you can install the pre-built ZIP file from the `web-ext-artifacts/` directory.
 
 ## Usage
 
