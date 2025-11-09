@@ -1,3 +1,15 @@
+// Helper function to check if URL is a valid YouTube page
+function isYouTubeUrl(url) {
+  if (!url) return false;
+  try {
+    const urlObj = new URL(url);
+    // Check if hostname is youtube.com or subdomain of youtube.com
+    return urlObj.hostname === 'youtube.com' || urlObj.hostname.endsWith('.youtube.com');
+  } catch (e) {
+    return false;
+  }
+}
+
 // Load saved settings when popup opens
 document.addEventListener('DOMContentLoaded', function() {
   browser.storage.local.get(['webhookUrl', 'precedingString']).then(function(result) {
@@ -12,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Check if we're on a YouTube page
   browser.tabs.query({active: true, currentWindow: true}).then(function(tabs) {
     const currentTab = tabs[0];
-    const isYouTube = currentTab.url && currentTab.url.includes('youtube.com');
+    const isYouTube = isYouTubeUrl(currentTab.url);
     
     const sendButton = document.getElementById('sendButton');
     if (!isYouTube) {
@@ -53,7 +65,7 @@ document.getElementById('sendButton').addEventListener('click', function() {
       const currentTab = tabs[0];
       const url = currentTab.url;
       
-      if (!url || !url.includes('youtube.com')) {
+      if (!isYouTubeUrl(url)) {
         showStatus('Not on a YouTube page', 'error');
         return;
       }
