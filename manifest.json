@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "YouTube Webhook Sender",
+  "version": "1.0",
+  "description": "Send YouTube video links via webhook with a custom message",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "youtube-webhook@ralpizarb.com",
+      "strict_min_version": "79.0"
+    }
+  },
+  "icons": {
+    "48": "icons/icon-48.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "browser_action": {
+    "default_icon": "icons/icon-48.png",
+    "default_title": "Send to Webhook",
+    "default_popup": "popup/popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
