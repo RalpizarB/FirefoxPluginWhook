@@ -25,7 +25,9 @@
 ## Configuration
 
 1. Click the addon icon in your Firefox toolbar
-2. Enter your webhook URL (e.g., `https://your-webhook-url.com/endpoint`)
+2. Enter your webhook URL:
+   - **Discord webhook**: Go to Server Settings → Integrations → Webhooks → Copy URL
+   - **Other webhooks**: Use your webhook endpoint URL
 3. (Optional) Enter a preceding string (e.g., "Check out this video: ")
 4. Click "Save Settings"
 

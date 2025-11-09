@@ -42,11 +42,24 @@ The addon sends a POST request with the following JSON payload:
 
 ```json
 {
+  "content": "Your preceding string + URL",
   "text": "Your preceding string + URL",
   "url": "https://www.youtube.com/watch?v=...",
   "precedingString": "Your preceding string"
 }
 ```
+
+**Compatibility:**
+- `content` field: Discord webhooks
+- `text` field: Generic webhooks and other services
+- Both fields contain the same message (preceding string + URL)
+
+### Discord Webhook Setup
+
+1. In Discord, go to Server Settings → Integrations → Webhooks
+2. Create a new webhook and copy the URL
+3. Paste the URL in the addon settings
+4. Your YouTube links will appear as messages in Discord!
 
 ## Files Structure
 

@@ -75,13 +75,15 @@ document.getElementById('sendButton').addEventListener('click', function() {
       const message = precedingString + url;
 
       // Send to webhook
+      // Discord webhooks use "content" field, other services might use different fields
       fetch(result.webhookUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          text: message,
+          content: message,  // Discord webhook format
+          text: message,     // Generic webhook format
           url: url,
           precedingString: precedingString
         })
