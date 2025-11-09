@@ -1,0 +1,26 @@
+# SVG files (we only need the PNG)
+*.svg
+
+# Temporary files
+*.tmp
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build artifacts
+*.zip
+dist/
+build/
+web-ext-artifacts/
+
+# Node modules (if we add build tools later)
+node_modules/
+package-lock.json
